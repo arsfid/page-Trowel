@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* FooterRRR */}
       <footer id="kontak" className="bg-gray-900 text-gray-300 py-10">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h4 className="text-xl font-semibold text-white mb-4">Trowel</h4>
