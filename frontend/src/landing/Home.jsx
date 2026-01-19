@@ -1,33 +1,96 @@
 import React from "react";
+import { motion } from "framer-motion";
 import heroImage from "../assets/picture/hero.jpg";
+import heroKiri from "../assets/picture/herokiri.png";
+
+const textContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const textItem = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const Home = () => {
   return (
-    <section className="w-full min-h-screen flex">
-      {/* Left Content */}
-      <div className="w-1/2 bg-black/80 text-white flex flex-col justify-center px-16">
-        <h1 className="text-4xl font-bold leading-tight mb-6">
-          Solusi Jasa Konstruksi <br /> Profesional
-        </h1>
+    <section id="home" className="relative w-full min-h-screen flex flex-col md:flex-row pt-16 overflow-hidden">
+      
+      {/* LEFT IMAGE + OVERLAY */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative w-full md:w-1/2 min-h-[500px]"
+        style={{
+          backgroundImage: `url(${heroKiri})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-[#210D01]/85"></div>
+      </motion.div>
 
-        <p className="text-gray-300 mb-8 leading-relaxed">
-          Gerong Aplikator menyediakan jasa bangunan terpercaya mulai dari
-          pengecoran jalan, pengecoran lantai, dan epoxy.
-        </p>
-
-        <button className="w-fit px-6 py-3 bg-orange-500 rounded-md hover:bg-orange-600 transition">
-          Hubungi Kami
-        </button>
-      </div>
-
-      {/* Right Image */}
-      <div className="w-1/2">
+      {/* RIGHT IMAGE */}
+      <motion.div
+        initial={{ x: 80, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="w-full md:w-2/3 min-h-[500px]"
+      >
         <img
           src={heroImage}
           alt="Konstruksi"
           className="w-full h-full object-cover"
         />
-      </div>
+      </motion.div>
+
+      {/* HERO TEXT */}
+      <motion.div
+        variants={textContainer}
+        initial="hidden"
+        animate="show"
+        className="absolute inset-0 flex items-center"
+      >
+        <div className="relative z-10 px-8 md:px-20 max-w-5xl text-white">
+          
+          <motion.h1
+            variants={textItem}
+            className="text-4xl md:text-6xl font-bold leading-tight mb-6"
+          >
+            Solusi Jasa Konstruksi <br />
+            Profesional
+          </motion.h1>
+
+          <motion.p
+            variants={textItem}
+            className="text-gray-200 mb-8 leading-relaxed max-w-xl"
+          >
+            Gerong Aplikator menyediakan jasa bangunan terpercaya mulai dari
+            pengecoran jalan, pengecoran lantai, dan epoxy.
+          </motion.p>
+
+          <motion.button
+            variants={textItem}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 bg-orange-500 rounded-md hover:bg-orange-600 transition"
+          >
+            Hubungi Kami
+          </motion.button>
+
+        </div>
+      </motion.div>
     </section>
   );
 };
