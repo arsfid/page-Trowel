@@ -23,7 +23,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#" className={menuStyle}>
+            <a href="#layanan" className={menuStyle}>
               Layanan
             </a>
           </li>
@@ -60,7 +60,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" className={menuStyle}>
+              <a href="#layanan" className={menuStyle}>
                 Layanan
               </a>
             </li>

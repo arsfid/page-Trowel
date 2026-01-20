@@ -5,6 +5,7 @@ import viteLogo from "/vite.svg";
 import Home from "./landing/Home";
 import Navbar from "./landing/Navbar";
 import Tentang from "./landing/Tentang";
+import Layanan from "./landing/Layanan";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     < Home />
     < Navbar/>
     < Tentang/>
+    < Layanan/>
     </>
   );
 }
