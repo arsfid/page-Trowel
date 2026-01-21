@@ -1,88 +1,100 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 import logo from "../assets/picture/logotrowel.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
 
-  const menuStyle =
-    "px-5 py-2 rounded-full hover:bg-orange-500 hover:text-white transition";
+  useEffect(() => {
+    let lastScroll = 0;
+
+    return scrollY.onChange((current) => {
+      if (current > lastScroll && current > 100) {
+        setHidden(true); // scroll down → hide
+      } else {
+        setHidden(false); // scroll up → show
+      }
+      lastScroll = current;
+    });
+  }, [scrollY]);
+
+  const menu = [
+    { name: "Beranda", href: "#home" },
+    { name: "Layanan", href: "#layanan" },
+    { name: "Tentang Kami", href: "#tentang" },
+    { name: "Galeri", href: "#" },
+    { name: "Kontak", href: "#" },
+  ];
 
   return (
-    <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
+    <>
+      {/* NAVBAR */}
+      <motion.nav
+        initial={{ y: 0 }}
+        animate={{ y: hidden ? -100 : 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50"
+      >
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
           <img src={logo} alt="Gerong Aplikator" className="h-10" />
-        </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-4 font-medium text-gray-700">
-          <li>
-            <a href="#home" className={menuStyle}>
-              Beranda
-            </a>
-          </li>
-          <li>
-            <a href="#layanan" className={menuStyle}>
-              Layanan
-            </a>
-          </li>
-          <li>
-            <a href="#tentang" className={menuStyle}>
-              Tentang Kami
-            </a>
-          </li>
-          <li>
-            <a href="#" className={menuStyle}>
-              Galeri
-            </a>
-          </li>
-          <li>
-            <a href="#" className={menuStyle}>
-              Kontak
-            </a>
-          </li>
-        </ul>
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-8 font-medium text-gray-700">
+            {menu.map((item, i) => (
+              <li key={i} className="relative group">
+                <a
+                  href={item.href}
+                  className="transition-colors group-hover:text-orange-500"
+                >
+                  {item.name}
+                </a>
 
-        {/* Hamburger */}
-        <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
-          ☰
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-white shadow-md px-6 pb-4">
-          <ul className="flex flex-col gap-3 font-medium text-gray-700">
-            <li>
-              <a href="#home" className={menuStyle}>
-                Beranda
-              </a>
-            </li>
-            <li>
-              <a href="#layanan" className={menuStyle}>
-                Layanan
-              </a>
-            </li>
-            <li>
-              <a href="#tentang" className={menuStyle}>
-                Tentang Kami
-              </a>
-            </li>
-            <li>
-              <a href="#" className={menuStyle}>
-                Galeri
-              </a>
-            </li>
-            <li>
-              <a href="#" className={menuStyle}>
-                Kontak
-              </a>
-            </li>
+                {/* UNDERLINE */}
+                <span className="absolute -bottom-2 left-0 w-0 h-[3px] bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full" />
+              </li>
+            ))}
           </ul>
+
+          {/* Hamburger */}
+          <button
+            className="md:hidden text-3xl"
+            onClick={() => setOpen(!open)}
+          >
+            ☰
+          </button>
         </div>
-      )}
-    </nav>
+      </motion.nav>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed top-16 left-0 w-full bg-white shadow-lg md:hidden z-40 overflow-hidden"
+          >
+            <ul className="flex flex-col gap-6 px-6 py-6 font-medium text-gray-700">
+              {menu.map((item, i) => (
+                <li key={i}>
+                  <a
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="block border-b pb-2 hover:text-orange-500 transition"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

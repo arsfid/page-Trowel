@@ -1,24 +1,69 @@
 import React from "react";
+import { motion } from "framer-motion";
 import layananImg from "../assets/picture/hero.jpg"; 
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const Layanan = () => {
   return (
-    <section id="layanan" className="w-full bg-white py-20">
+    <section id="layanan" className="w-full bg-white py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#3a1f14] text-center mb-16">
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.5 }} // aktif saat 50% terlihat
+          className="text-3xl md:text-4xl font-bold text-[#3a1f14] text-center mb-16"
+        >
           Layanan Kami
-        </h2>
+        </motion.h2>
 
         <div className="flex flex-col lg:flex-row gap-14 items-center">
           
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-1/2 space-y-10">
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }}
+            className="w-full lg:w-1/2 space-y-10"
+          >
             
             {/* Item 1 */}
-            <div className="flex gap-5">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4 }}
+              className="flex gap-5"
+            >
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#0d1b4c] text-white font-bold">
                 1.
               </div>
@@ -31,10 +76,16 @@ const Layanan = () => {
                   komersial, dll dengan kualitas tahan lama.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Item 2 */}
-            <div className="flex gap-5">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4 }}
+              className="flex gap-5"
+            >
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#0d1b4c] text-white font-bold">
                 2.
               </div>
@@ -47,10 +98,16 @@ const Layanan = () => {
                   berbagai kebutuhan bangunan.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Item 3 */}
-            <div className="flex gap-5">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4 }}
+              className="flex gap-5"
+            >
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#0d1b4c] text-white font-bold">
                 3.
               </div>
@@ -63,12 +120,18 @@ const Layanan = () => {
                   perawatan.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-full lg:w-1/2 flex justify-center">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }}
+            className="w-full lg:w-1/2 flex justify-center"
+          >
             <div className="relative">
               <img
                 src={layananImg}
@@ -77,10 +140,10 @@ const Layanan = () => {
               />
 
               {/* Decorative Shape */}
-              <div className="absolute -bottom-6 -left-6 w-40 h-20 border-[10px] border-white rounded-[30px] bg-transparent"></div>
-              <div className="absolute -top-6 -right-6 w-32 h-20 border-[10px] border-white rounded-[30px] bg-transparent"></div>
+              <div className="absolute -bottom-6 -left-6 w-40 h-20 border-[10px] border-white rounded-[30px]"></div>
+              <div className="absolute -top-6 -right-6 w-32 h-20 border-[10px] border-white rounded-[30px]"></div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

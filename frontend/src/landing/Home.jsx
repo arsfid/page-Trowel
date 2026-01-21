@@ -5,7 +5,7 @@ import heroKiri from "../assets/picture/herokiri.png";
 
 const textContainer = {
   hidden: { opacity: 0 },
-  show: {
+  visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
@@ -15,22 +15,44 @@ const textContainer = {
 
 const textItem = {
   hidden: { opacity: 0, y: 30 },
-  show: {
+  visible: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
+const fadeLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
+
 const Home = () => {
   return (
-    <section id="home" className="relative w-full min-h-screen flex flex-col md:flex-row pt-16 overflow-hidden">
+    <section
+      id="home"
+      className="relative w-full min-h-screen flex flex-col md:flex-row pt-16 overflow-hidden"
+    >
       
       {/* LEFT IMAGE + OVERLAY */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        variants={fadeLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.4, once: false }}
         className="relative w-full md:w-1/2 min-h-[500px]"
         style={{
           backgroundImage: `url(${heroKiri})`,
@@ -43,9 +65,10 @@ const Home = () => {
 
       {/* RIGHT IMAGE */}
       <motion.div
-        initial={{ x: 80, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        variants={fadeRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.4, once: false }}
         className="w-full md:w-2/3 min-h-[500px]"
       >
         <img
@@ -55,11 +78,12 @@ const Home = () => {
         />
       </motion.div>
 
-      {/* HERO TEXT */}
+      {/* HERO TEXT (NYEBRANG) */}
       <motion.div
         variants={textContainer}
         initial="hidden"
-        animate="show"
+        whileInView="visible"
+        viewport={{ amount: 0.5, once: false }}
         className="absolute inset-0 flex items-center"
       >
         <div className="relative z-10 px-8 md:px-20 max-w-5xl text-white">

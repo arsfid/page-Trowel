@@ -3,36 +3,43 @@ import { motion } from "framer-motion";
 import { BrickWall, Building2, Handshake } from "lucide-react";
 
 const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
+  hidden: {},
+  visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.25,
     },
   },
 };
 
 const card = {
-  hidden: { opacity: 0, y: 40 },
-  show: {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1], // premium easing
+    },
   },
 };
 
 const Tentang = () => {
   return (
-    <section id="tentang" className="w-full bg-white py-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="tentang"
+      className="relative w-full py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
+    >
+      {/* Soft background glow */}
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-200/30 blur-[120px]" />
 
+      <div className="relative max-w-7xl mx-auto px-6">
         {/* Title */}
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-bold text-[#3a1f14] mb-14"
+          viewport={{ once: false, amount: 0.6 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="text-3xl md:text-5xl font-bold text-[#3a1f14] mb-20"
         >
           Tentang Kami
         </motion.h2>
@@ -41,82 +48,57 @@ const Tentang = () => {
         <motion.div
           variants={container}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-10"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-12"
         >
-          {/* Card 1 */}
-          <motion.div
-            variants={card}
-            whileHover={{
-              y: -10,
-              boxShadow: "0px 20px 40px rgba(0,0,0,0.15)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="bg-white rounded-2xl shadow-lg px-8 py-10 text-center cursor-pointer"
-          >
+          {/* CARD */}
+          {[
+            {
+              icon: <Building2 size={44} />,
+              text:
+                "Gerong Aplikator memiliki pengalaman dan keahlian dalam bidang pengecoran jalan, pengecoran lantai, serta aplikasi epoxy lantai.",
+            },
+            {
+              icon: <BrickWall size={44} />,
+              text:
+                "Kami mengutamakan penggunaan material berkualitas dan metode kerja yang tepat untuk menghasilkan pekerjaan yang kuat, rapi, dan sesuai standar.",
+            },
+            {
+              icon: <Handshake size={44} />,
+              text:
+                "Kami berkomitmen memberikan pelayanan profesional dengan mengedepankan ketepatan waktu dan kepuasan klien di setiap proyek.",
+            },
+          ].map((item, i) => (
             <motion.div
-              whileHover={{ scale: 1.15, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex justify-center mb-6"
+              key={i}
+              variants={card}
+              whileHover={{
+                y: -16,
+                scale: 1.02,
+              }}
+              transition={{ type: "spring", stiffness: 180, damping: 14 }}
+              className="group relative bg-white rounded-3xl p-10 text-center shadow-[0_15px_40px_rgba(0,0,0,0.08)] cursor-pointer"
             >
-              <Building2 size={40} />
-            </motion.div>
-            <p className="text-gray-700 leading-relaxed">
-              Gerong Aplikator memiliki pengalaman dan keahlian dalam bidang
-              pengecoran jalan, pengecoran lantai, serta aplikasi epoxy lantai.
-            </p>
-          </motion.div>
+              {/* Hover Glow Border */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-orange-400/40 to-orange-600/40 blur-xl" />
 
-          {/* Card 2 */}
-          <motion.div
-            variants={card}
-            whileHover={{
-              y: -10,
-              boxShadow: "0px 20px 40px rgba(0,0,0,0.15)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="bg-white rounded-2xl shadow-lg px-8 py-10 text-center cursor-pointer"
-          >
-            <motion.div
-              whileHover={{ scale: 1.15, rotate: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex justify-center mb-6"
-            >
-              <BrickWall size={40} />
-            </motion.div>
-            <p className="text-gray-700 leading-relaxed">
-              Kami mengutamakan penggunaan material berkualitas dan metode kerja
-              yang tepat untuk menghasilkan pekerjaan yang kuat, rapi, dan
-              sesuai standar.
-            </p>
-          </motion.div>
+              {/* Content */}
+              <div className="relative z-10">
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex justify-center mb-8 text-[#0d1b4c]"
+                >
+                  {item.icon}
+                </motion.div>
 
-          {/* Card 3 */}
-          <motion.div
-            variants={card}
-            whileHover={{
-              y: -10,
-              boxShadow: "0px 20px 40px rgba(0,0,0,0.15)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="bg-white rounded-2xl shadow-lg px-8 py-10 text-center cursor-pointer"
-          >
-            <motion.div
-              whileHover={{ scale: 1.15, rotate: 3 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex justify-center mb-6"
-            >
-              <Handshake size={40} />
+                <p className="text-gray-700 leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
             </motion.div>
-            <p className="text-gray-700 leading-relaxed">
-              Kami berkomitmen memberikan pelayanan profesional dengan
-              mengedepankan ketepatan waktu dan kepuasan klien di setiap proyek.
-            </p>
-          </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
