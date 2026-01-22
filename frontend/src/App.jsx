@@ -5,6 +5,7 @@ import Tentang from "./landing/Tentang";
 import Layanan from "./landing/Layanan";
 import PageTransition from "./components/PageTransition";
 import LoadingIntro from "./components/LoadingIntro";
+import Galeri from "./landing/Galeri";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ function App() {
             <Home />
             <Tentang />
             <Layanan />
+            <Galeri/>
           </PageTransition>
         </>
       )}

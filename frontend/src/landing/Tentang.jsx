@@ -30,7 +30,7 @@ const Tentang = () => {
       className="relative w-full py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
     >
       {/* Soft background glow */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-200/30 blur-[120px]" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Title */}
