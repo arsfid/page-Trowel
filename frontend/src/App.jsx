@@ -6,6 +6,8 @@ import Layanan from "./landing/Layanan";
 import PageTransition from "./components/PageTransition";
 import LoadingIntro from "./components/LoadingIntro";
 import Galeri from "./landing/Galeri";
+import Kontak from "./landing/Kontak";
+import FloatingWA from "./landing/FloatingWA";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +26,8 @@ function App() {
             <Tentang />
             <Layanan />
             <Galeri/>
+            <Kontak/>
+            <FloatingWA/>
           </PageTransition>
         </>
       )}

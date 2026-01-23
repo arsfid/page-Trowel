@@ -12,9 +12,9 @@ const Navbar = () => {
 
     return scrollY.onChange((current) => {
       if (current > lastScroll && current > 100) {
-        setHidden(true); // scroll down → hide
+        setHidden(true);
       } else {
-        setHidden(false); // scroll up → show
+        setHidden(false);
       }
       lastScroll = current;
     });
@@ -24,9 +24,31 @@ const Navbar = () => {
     { name: "Beranda", href: "#home" },
     { name: "Layanan", href: "#layanan" },
     { name: "Tentang Kami", href: "#tentang" },
-    { name: "Galeri", href: "#" },
-    { name: "Kontak", href: "#" },
+    { name: "Galeri", href: "#galeri" },
+    { name: "Kontak", href: "#kontak" },
   ];
+
+  // 🔥 FIX MOBILE SCROLL
+  const handleScroll = (id) => {
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    const navbarHeight = 80;
+
+    const y =
+      target.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarHeight;
+
+    setOpen(false);
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }, 300);
+  };
 
   return (
     <>
@@ -41,7 +63,7 @@ const Navbar = () => {
           {/* Logo */}
           <img src={logo} alt="Gerong Aplikator" className="h-10" />
 
-          {/* Desktop Menu */}
+          {/* DESKTOP MENU */}
           <ul className="hidden md:flex items-center gap-8 font-medium text-gray-700">
             {menu.map((item, i) => (
               <li key={i} className="relative group">
@@ -52,13 +74,12 @@ const Navbar = () => {
                   {item.name}
                 </a>
 
-                {/* UNDERLINE */}
                 <span className="absolute -bottom-2 left-0 w-0 h-[3px] bg-orange-500 rounded-full transition-all duration-300 group-hover:w-full" />
               </li>
             ))}
           </ul>
 
-          {/* Hamburger */}
+          {/* HAMBURGER */}
           <button
             className="md:hidden text-3xl"
             onClick={() => setOpen(!open)}
@@ -81,13 +102,13 @@ const Navbar = () => {
             <ul className="flex flex-col gap-6 px-6 py-6 font-medium text-gray-700">
               {menu.map((item, i) => (
                 <li key={i}>
-                  <a
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block border-b pb-2 hover:text-orange-500 transition"
+                  {/* 🔥 BUTTON BUKAN <a> */}
+                  <button
+                    onClick={() => handleScroll(item.href)}
+                    className="block w-full text-left border-b pb-2 hover:text-orange-500 transition"
                   >
                     {item.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
