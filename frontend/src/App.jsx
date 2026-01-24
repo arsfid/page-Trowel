@@ -8,6 +8,7 @@ import LoadingIntro from "./components/LoadingIntro";
 import Galeri from "./landing/Galeri";
 import Kontak from "./landing/Kontak";
 import FloatingWA from "./landing/FloatingWA";
+import Footer from "./landing/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function App() {
             <Galeri/>
             <Kontak/>
             <FloatingWA/>
+            <Footer/>
           </PageTransition>
         </>
       )}
