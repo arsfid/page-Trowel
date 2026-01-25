@@ -28,7 +28,7 @@ const Navbar = () => {
     { name: "Kontak", href: "#kontak" },
   ];
 
-  // 🔥 FIX MOBILE SCROLL
+  //MOBILE SCROLL
   const handleScroll = (id) => {
     const target = document.querySelector(id);
     if (!target) return;
@@ -102,7 +102,7 @@ const Navbar = () => {
             <ul className="flex flex-col gap-6 px-6 py-6 font-medium text-gray-700">
               {menu.map((item, i) => (
                 <li key={i}>
-                  {/* 🔥 BUTTON BUKAN <a> */}
+                  {/*BUTTON */}
                   <button
                     onClick={() => handleScroll(item.href)}
                     className="block w-full text-left border-b pb-2 hover:text-orange-500 transition"

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import layananImg from "../assets/picture/hero.jpg";
+import layananImg from "../assets/picture/layanan.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -120,9 +120,7 @@ const Layanan = () => {
                 loading="lazy"
               />
 
-              {/* Decorative accents */}
-              <div className="absolute -bottom-4 -left-4 w-28 h-14 border-8 border-white rounded-2xl"></div>
-              <div className="absolute -top-4 -right-4 w-24 h-14 border-8 border-white rounded-2xl"></div>
+             
             </div>
           </motion.div>
 

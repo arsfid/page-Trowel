@@ -104,14 +104,7 @@ const Home = () => {
             pengecoran jalan, pengecoran lantai, dan epoxy.
           </motion.p>
 
-          <motion.button
-            variants={textItem}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-orange-500 rounded-md hover:bg-orange-600 transition"
-          >
-            Hubungi Kami
-          </motion.button>
+          
 
         </div>
       </motion.div>
