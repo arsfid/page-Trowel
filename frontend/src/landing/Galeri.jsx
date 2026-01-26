@@ -4,7 +4,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryData = [
   {
-    img: "/src/assets/picture/GaleriProyek/jalancor.jpg",
+    img: "/src/assets/picture/GaleriProyek/corjalan1.jpg",
     title: "Pengecoran Jalan",
     desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama.",
   },
@@ -14,14 +14,39 @@ const galleryData = [
     desc: "Lantai beton presisi untuk gudang & bangunan industri.",
   },
   {
-    img: "/src/assets/picture/hero.jpg",
+    img: "/src/assets/picture/GaleriProyek/epoxy.jpg",
     title: "Epoxy Lantai",
     desc: "Finishing epoxy profesional, bersih dan awet.",
   },
    {
-    img: "/src/assets/picture/hero.jpg",
+    img: "/src/assets/picture/GaleriProyek/epoxy1.jpg",
     title: "Epoxy Lantai",
     desc: "Finishing epoxy profesional, bersih dan awet.",
+  },
+  {
+    img: "/src/assets/picture/GaleriProyek/corlantai2.jpg",
+    title: "Pengecoran Lantai",
+    desc: "Lantai beton presisi untuk gudang & bangunan industri.",
+  },
+  {
+    img: "/src/assets/picture/GaleriProyek/corjalan.jpg",
+    title: "Pengecoran Jalan",
+    desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama.",
+  },
+  {
+    img: "/src/assets/picture/GaleriProyek/epoxy2.jpg",
+    title: "Epoxy Lantai",
+    desc: "Finishing epoxy profesional, bersih dan awet.",
+  },
+  {
+    img: "/src/assets/picture/GaleriProyek/corlantai3.jpg",
+    title: "Pengecoran Lantai",
+    desc: "Lantai beton presisi untuk gudang & bangunan industri.",
+  },
+  {
+    img: "/src/assets/picture/GaleriProyek/corjalan2.jpg",
+    title: "Pengecoran Jalan",
+    desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama.",
   },
 ];
 
