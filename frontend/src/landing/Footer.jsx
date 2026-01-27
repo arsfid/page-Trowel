@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* MAIN FOOTER */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* BRAND */}
+          {/* LOGO */}
           <div className="space-y-5 flex items-center">
             <img src={logo} alt="Logo" className="h-12" />
             
