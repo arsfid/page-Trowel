@@ -11,7 +11,7 @@ const galleryData = [
   {
     img: "/src/assets/picture/GaleriProyek/corlantai.jpg",
     title: "Pengecoran Lantai",
-    desc: "Lantai beton presisi untuk gudang & bangunan industri.",
+    desc: "Lantai beton presisi untuk gudang.",
   },
   {
     img: "/src/assets/picture/GaleriProyek/epoxy.jpg",
@@ -26,12 +26,12 @@ const galleryData = [
   {
     img: "/src/assets/picture/GaleriProyek/corlantai2.jpg",
     title: "Pengecoran Lantai",
-    desc: "Lantai beton presisi untuk gudang & bangunan industri.",
+    desc: "Lantai beton presisi untuk bangunan industri.",
   },
   {
     img: "/src/assets/picture/GaleriProyek/corjalan.jpg",
     title: "Pengecoran Jalan",
-    desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama.",
+    desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama di area perawahan.",
   },
   {
     img: "/src/assets/picture/GaleriProyek/epoxy2.jpg",
@@ -41,7 +41,7 @@ const galleryData = [
   {
     img: "/src/assets/picture/GaleriProyek/corlantai3.jpg",
     title: "Pengecoran Lantai",
-    desc: "Lantai beton presisi untuk gudang & bangunan industri.",
+    desc: "Lantai beton presisi untuk bangunan industri.",
   },
   {
     img: "/src/assets/picture/GaleriProyek/corjalan2.jpg",
@@ -88,7 +88,7 @@ const Galeri = () => {
           </h2>
 
           <p className="text-gray-500 mb-8">
-            Dokumentasi proyek terbaik kami
+            Beberapa Dokumentasi proyek kami
           </p>
 
           <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
