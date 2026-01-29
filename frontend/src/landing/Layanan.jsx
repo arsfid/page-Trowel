@@ -43,7 +43,7 @@ const floatAnim = {
 
 export default function Layanan() {
   return (
-    <section id="layanan" className="px-6 md:px-20 py-27 overflow-hidden">
+    <section id="layanan" className="px-6 md:px-20 py-24 overflow-hidden">
       {/* TITLE */}
       <motion.h2
         variants={fadeUp}
@@ -62,24 +62,18 @@ export default function Layanan() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-15 md:pl-14"
+          className="space-y-10 md:pl-14"
         >
           {/* ITEM 1 */}
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ x: 4 }}
-            className="flex gap-4 group"
-          >
+          <motion.div variants={fadeUp} whileHover={{ x: 4 }} className="flex gap-4">
             <motion.span
               whileHover={{ scale: 1.1 }}
-              className="bg-blue-300 text-white px-4 py-2 rounded-xl font-bold shadow-md"
+              className="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold shadow-md"
             >
               01
             </motion.span>
             <div>
-              <h3 className="font-bold text-lg mb-1">
-                Pengecoran Jalan
-              </h3>
+              <h3 className="font-bold text-lg mb-1">Pengecoran Jalan</h3>
               <p className="text-gray-600">
                 Pekerjaan pengecoran jalan untuk area perumahan, industri, dan
                 komersial dengan hasil kuat dan tahan lama.
@@ -92,18 +86,16 @@ export default function Layanan() {
             variants={fadeUp}
             whileHover={{ x: 4 }}
             transition={{ delay: 0.15 }}
-            className="flex gap-4 group"
+            className="flex gap-4"
           >
             <motion.span
               whileHover={{ scale: 1.1 }}
-              className="bg-blue-300 text-white px-4 py-2 rounded-xl font-bold shadow-md"
+              className="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold shadow-md"
             >
               02
             </motion.span>
             <div>
-              <h3 className="font-bold text-lg mb-1">
-                Pengecoran Lantai
-              </h3>
+              <h3 className="font-bold text-lg mb-1">Pengecoran Lantai</h3>
               <p className="text-gray-600">
                 Lantai beton yang rata, kokoh, dan siap digunakan untuk berbagai
                 kebutuhan bangunan.
@@ -116,18 +108,16 @@ export default function Layanan() {
             variants={fadeUp}
             whileHover={{ x: 4 }}
             transition={{ delay: 0.3 }}
-            className="flex gap-4 group"
+            className="flex gap-4"
           >
             <motion.span
               whileHover={{ scale: 1.1 }}
-              className="bg-blue-300 text-white px-4 py-2 rounded-xl font-bold shadow-md"
+              className="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold shadow-md"
             >
               03
             </motion.span>
             <div>
-              <h3 className="font-bold text-lg mb-1">
-                Epoxy Lantai
-              </h3>
+              <h3 className="font-bold text-lg mb-1">Epoxy Lantai</h3>
               <p className="text-gray-600">
                 Aplikasi epoxy lantai profesional untuk hasil rapi, kuat, dan
                 mudah perawatan.
@@ -152,51 +142,53 @@ export default function Layanan() {
             className="rounded-3xl w-[300px] md:w-[400px] h-[420px] md:h-[560px] object-cover shadow-xl"
           />
 
-          {/* FLOATING CARD 1 */}
+          {/* RATING 1 */}
           <motion.div
             variants={floatAnim}
             animate="animate"
-            className="absolute top-4 left-4 bg-white/60 backdrop-blur-md border shadow-xl px-4 py-2 rounded-2xl flex items-center gap-3"
+            className="
+              absolute top-4 left-4
+              bg-white/60 backdrop-blur-md border shadow-xl
+              px-4 py-2 rounded-2xl flex items-center gap-3
+            "
           >
-            <img
-              src="https://i.pravatar.cc/40?img=11"
-              alt="user"
-              className="w-9 h-9 rounded-full"
-            />
+            <img src="https://i.pravatar.cc/40?img=11" className="w-9 h-9 rounded-full" />
             <div>
               <p className="text-sm font-semibold">Budi Santoso</p>
               <p className="text-xs text-gray-600">⭐ 5,0</p>
             </div>
           </motion.div>
 
-          {/* FLOATING CARD 2 (HIDE MOBILE) */}
+          {/* RATING 2 */}
           <motion.div
             variants={floatAnim}
             animate="animate"
-            className="hidden md:flex absolute bottom-40 left-6 bg-white/60 backdrop-blur-md border shadow-xl px-4 py-2 rounded-2xl items-center gap-3"
+            className="
+              absolute bottom-6 left-4
+              md:bottom-40 md:left-6
+              bg-white/60 backdrop-blur-md border shadow-xl
+              px-4 py-2 rounded-2xl flex items-center gap-3
+            "
           >
-            <img
-              src="https://i.pravatar.cc/40?img=15"
-              alt="user"
-              className="w-9 h-9 rounded-full"
-            />
+            <img src="https://i.pravatar.cc/40?img=15" className="w-9 h-9 rounded-full" />
             <div>
               <p className="text-sm font-semibold">Andi Pratama</p>
               <p className="text-xs text-gray-600">⭐ 4,9</p>
             </div>
           </motion.div>
 
-          {/* FLOATING CARD 3 (HIDE MOBILE) */}
+          {/* RATING 3 */}
           <motion.div
             variants={floatAnim}
             animate="animate"
-            className="hidden md:flex absolute bottom-60 right-2 bg-white/60 backdrop-blur-md border shadow-xl px-4 py-2 rounded-2xl items-center gap-3"
+            className="
+              absolute bottom-20 right-4
+              md:bottom-60 md:right-2
+              bg-white/60 backdrop-blur-md border shadow-xl
+              px-4 py-2 rounded-2xl flex items-center gap-3
+            "
           >
-            <img
-              src="https://i.pravatar.cc/40?img=18"
-              alt="user"
-              className="w-9 h-9 rounded-full"
-            />
+            <img src="https://i.pravatar.cc/40?img=18" className="w-9 h-9 rounded-full" />
             <div>
               <p className="text-sm font-semibold">Dewi Lestari</p>
               <p className="text-xs text-gray-600">⭐ 4,8</p>
