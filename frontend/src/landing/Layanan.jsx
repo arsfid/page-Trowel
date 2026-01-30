@@ -152,7 +152,7 @@ export default function Layanan() {
               px-4 py-2 rounded-2xl flex items-center gap-3
             "
           >
-            <img src="https://i.pravatar.cc/40?img=11" className="w-9 h-9 rounded-full" />
+            <img src="https://i.pravatar.cc/40?img=13" className="w-9 h-9 rounded-full" />
             <div>
               <p className="text-sm font-semibold">Budi Santoso</p>
               <p className="text-xs text-gray-600">⭐ 5,0</p>
@@ -190,7 +190,7 @@ export default function Layanan() {
           >
             <img src="https://i.pravatar.cc/40?img=18" className="w-9 h-9 rounded-full" />
             <div>
-              <p className="text-sm font-semibold">Dewi Lestari</p>
+              <p className="text-sm font-semibold">teguh saputra</p>
               <p className="text-xs text-gray-600">⭐ 4,8</p>
             </div>
           </motion.div>

@@ -57,7 +57,7 @@ const Tentang = () => {
             {
               icon: <Building2 size={44} />,
               text:
-                "Gerong Aplikator memiliki pengalaman dan keahlian dalam bidang pengecoran jalan, pengecoran lantai, serta aplikasi epoxy lantai.",
+                "Gerong Aplikator memiliki pengalaman dan keahlian dalam bidang pengecoran jalan, pengecoran lantai, serta epoxy lantai.",
             },
             {
               icon: <BrickWall size={44} />,
