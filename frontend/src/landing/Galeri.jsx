@@ -1,50 +1,61 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import corjalan1 from "../assets/picture/GaleriProyek/corjalan1.jpg";
+import corlantai from "../assets/picture/GaleriProyek/corlantai.jpg";
+import epoxy from "../assets/picture/GaleriProyek/epoxy.jpg";
+import epoxy1 from "../assets/picture/GaleriProyek/epoxy1.jpg";
+import corlantai2 from "../assets/picture/GaleriProyek/corlantai2.jpg";
+import corjalan from "../assets/picture/GaleriProyek/corjalan.jpg";
+import epoxy2 from "../assets/picture/GaleriProyek/epoxy2.jpg";
+import corlantai3 from "../assets/picture/GaleriProyek/corlantai3.jpg";
+import corjalan2 from "../assets/picture/GaleriProyek/corjalan2.jpg";
+
+
 
 const galleryData = [
   {
-    img: "/src/assets/picture/GaleriProyek/corjalan1.jpg",
+    img: corjalan1,
     title: "Pengecoran Jalan",
     desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/corlantai.jpg",
+    img: corlantai,
     title: "Pengecoran Lantai",
     desc: "Lantai beton presisi untuk gudang.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/epoxy.jpg",
-    title: "Epoxy Lantai",
-    desc: "Finishing epoxy profesional, bersih dan awet.",
-  },
-   {
-    img: "/src/assets/picture/GaleriProyek/epoxy1.jpg",
+    img: epoxy,
     title: "Epoxy Lantai",
     desc: "Finishing epoxy profesional, bersih dan awet.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/corlantai2.jpg",
+    img: epoxy1,
+    title: "Epoxy Lantai",
+    desc: "Finishing epoxy profesional, bersih dan awet.",
+  },
+  {
+    img: corlantai2,
     title: "Pengecoran Lantai",
     desc: "Lantai beton presisi untuk bangunan industri.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/corjalan.jpg",
+    img: corjalan,
     title: "Pengecoran Jalan",
-    desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama di area perawahan.",
+    desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama di area persawahan.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/epoxy2.jpg",
+    img: epoxy2,
     title: "Epoxy Lantai",
     desc: "Finishing epoxy profesional, bersih dan awet.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/corlantai3.jpg",
+    img: corlantai3,
     title: "Pengecoran Lantai",
     desc: "Lantai beton presisi untuk bangunan industri.",
   },
   {
-    img: "/src/assets/picture/GaleriProyek/corjalan2.jpg",
+    img: corjalan2,
     title: "Pengecoran Jalan",
     desc: "Konstruksi jalan beton dengan hasil rapi dan tahan lama.",
   },
